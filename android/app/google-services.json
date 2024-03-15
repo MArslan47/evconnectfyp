@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "864870983943",
+    "firebase_url": "https://evconnectfyp-default-rtdb.firebaseio.com",
+    "project_id": "evconnectfyp",
+    "storage_bucket": "evconnectfyp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:864870983943:android:ad7336a863244ff9047da2",
+        "android_client_info": {
+          "package_name": "com.example.evconnectfyp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMp_vgntFb_uEqitt5Rh6NAxQ3M90v8Yw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
