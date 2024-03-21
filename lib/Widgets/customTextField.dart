@@ -5,8 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomTextField extends StatelessWidget {
   Widget? suffix;
   String text;
-  Widget prefix;
-  CustomTextField({super.key, this.suffix, required this.text, required this.prefix});
+  Widget? prefix;
+  CustomTextField({super.key, this.suffix, required this.text,  this.prefix});
 
   @override
   Widget build(BuildContext context) {

@@ -1,3 +1,4 @@
+import 'package:evconnectfyp/Utils/appColors.dart';
 import 'package:flutter/material.dart';
 
 class Favourite extends StatelessWidget {
@@ -7,7 +8,7 @@ class Favourite extends StatelessWidget {
 
 
         appBar: AppBar(
-          backgroundColor: const Color(0xff0d98b9),
+          backgroundColor:AppColors.cync,
           title: Text('Your favourite station'),
         ),
         body: Container(

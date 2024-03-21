@@ -1,4 +1,11 @@
+import 'package:evconnectfyp/Utils/appColors.dart';
 import 'package:flutter/material.dart';
+import '../Components/profileMenuWidget.dart';
+
+
+
+
+
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -13,7 +20,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: (){Navigator.pushNamed(context, 'dashboard');},icon: const Icon(Icons.arrow_back_ios)),
+          onPressed: (){Navigator.pushNamed(context, 'dashboard');},
+            icon: const Icon(Icons.arrow_back_ios)),
         title: const Padding(
           padding: EdgeInsets.symmetric(horizontal: 70),
           child: Text('Profile'),
@@ -41,7 +49,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     height: 30,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
-                      color: const Color(0xff0d98b9).withOpacity(0.1),
+                      color: AppColors.cync,
                     ),
                     child: const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 05),
@@ -75,11 +83,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
 
             ProfileMenuWidget(title: 'Settings', icon: Icons.settings, onPress: (){},),
-            ProfileMenuWidget(title: 'Biling Details', icon: Icons.wallet, onPress: (){},),
-            ProfileMenuWidget(title: 'User Managment', icon: Icons.manage_accounts, onPress: (){},),
+            ProfileMenuWidget(title: 'Billing Details', icon: Icons.wallet, onPress: (){},),
+            ProfileMenuWidget(title: 'User Management', icon: Icons.manage_accounts, onPress: (){},),
             const Divider(color: Colors.grey,),
             const SizedBox(height: 10,),
             ProfileMenuWidget(title: 'Information', icon: Icons.info, onPress: (){},),
+            ProfileMenuWidget(title: "Admin", icon: Icons.admin_panel_settings_outlined, onPress: (){}),
             ProfileMenuWidget(title: 'Logout',
               icon: Icons.logout ,
               textColor: Colors.red,
@@ -93,64 +102,3 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   }
 }
-
-class ProfileMenuWidget extends StatelessWidget {
-  const ProfileMenuWidget({
-    super.key,
-    required this.title,
-    required this.icon,
-    required this.onPress,
-    this.endIcon=true,
-    this.textColor,
-  });
-
-  final String title;
-  final IconData icon;
-  final VoidCallback onPress;
-  final bool endIcon;
-  final Color? textColor;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      onTap: onPress,
-      leading: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
-       child: Container(
-         width: 35,
-         height: 35,
-         decoration: BoxDecoration(borderRadius: BorderRadius.circular(100),
-         color: const Color(0xff0d98b9).withOpacity(0.1),
-        ),
-         child:  Padding(
-           padding:const EdgeInsets.symmetric(horizontal: 05),
-          child: Icon(icon,color:const Color(0xff0d98b9) ),
-      ),
-              ),
-            ),
-        title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 00),
-          child: Text(title,style: Theme.of(context).textTheme.bodyLarge?.apply(color: textColor)),
-        ),
-       trailing:endIcon? Container(
-          width: 30,
-          height: 30,
-          decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(100),
-          color: const Color(0xff0d98b9).withOpacity(0.1),
-        ),
-           child: const Padding(
-             padding: EdgeInsets.symmetric(horizontal: 05),
-             child: Icon(Icons.arrow_forward_ios,color:Colors.black ),
-       ),
-    ):null,
-               );
-  }
-}
-
-
-
-
-
-
-

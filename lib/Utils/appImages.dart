@@ -3,7 +3,9 @@ class AppImages{
       log="assets/images/log.jpeg",
       login="assets/images/login.png",
       logo="assets/images/logo.jpeg",
-      register="assets/images/register.png"
+      register="assets/images/register.png",
+      electricCar="assets/images/ElectricCar.png"
+
 
   ;
 }

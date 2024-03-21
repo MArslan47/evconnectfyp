@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:google_places_flutter/google_places_flutter.dart';
+import 'package:google_places_flutter/model/prediction.dart';
+
+import '../Utils/appImages.dart';
 
 class Home extends StatefulWidget {
   final LatLng? initialLocation;
@@ -23,6 +26,7 @@ class _HomeState extends State<Home> {
 
 
 
+
   final CameraPosition _cameraPosition = const CameraPosition(
     target: LatLng(33.738045, 73.084488),
     zoom: 14,
@@ -33,6 +37,8 @@ class _HomeState extends State<Home> {
     _marker.addAll(_list);
     super.initState();
   }
+
+
 
  final List<Marker> _marker=[];
  final List<Marker>_list=const[
@@ -82,6 +88,8 @@ class _HomeState extends State<Home> {
           },
         ),
 
+
+
            Padding(
              padding: const EdgeInsets.only(top: 500,left: 300).r,
              child: FloatingActionButton(
@@ -90,7 +98,7 @@ class _HomeState extends State<Home> {
                 GoogleMapController controller= await _controller.future;
                 controller.animateCamera(
                     CameraUpdate.newCameraPosition(
-                        CameraPosition(target:  LatLng(33.658664032 ,73.085499658),
+                        const CameraPosition(target:  LatLng(33.658664032 ,73.085499658),
                           zoom: 14,
                         )
                     ));
@@ -99,14 +107,6 @@ class _HomeState extends State<Home> {
               },
              ),
            ),
-
-          const TextField(
-            decoration: InputDecoration(
-              hintText: 'Search your place'
-
-
-            ),
-          )
 
         ]
       ),
