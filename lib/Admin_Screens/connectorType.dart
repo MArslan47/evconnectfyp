@@ -2,10 +2,13 @@ import 'package:evconnectfyp/Admin_Screens/connectorType1.dart';
 import 'package:evconnectfyp/Utils/appColors.dart';
 import 'package:evconnectfyp/Widgets/customText.dart';
 import 'package:evconnectfyp/Widgets/customTextField.dart';
+import 'package:evconnectfyp/Widgets/custom_Button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class Connector_Type extends StatefulWidget {
-  const Connector_Type({super.key});
+  final VoidCallback next;
+  final VoidCallback back;
+  const Connector_Type({super.key,required this.next,required this.back});
 
   @override
   State<Connector_Type> createState() => _Connector_TypeState();
@@ -15,16 +18,10 @@ class _Connector_TypeState extends State<Connector_Type> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.cync,
-        title: Padding(
-          padding: const EdgeInsets.only(left: 30).r,
-          child: Text('Connector Type'),
-        ),
-      ),
+
       body:  SingleChildScrollView(
         child: Padding(
-          padding:  EdgeInsets.all(15.r),
+          padding:  EdgeInsets.only(left: 15,right: 15).r,
           child: Column(
             children: [
               SizedBox(height: 10.h,),
@@ -65,7 +62,7 @@ class _Connector_TypeState extends State<Connector_Type> {
               SizedBox(height: 30.h,),
               InkWell(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (_)=>Connector_Type1()));
+                widget.next();
                 },
                 child: Container(
                   height: 50.h,
@@ -79,7 +76,7 @@ class _Connector_TypeState extends State<Connector_Type> {
                 ),
               ),
               SizedBox(height: 10.h,),
-              Text("CANCEL"),
+              Custom_Button(text: 'Previous', onTap: (){widget.back();})
 
             ],
           ),

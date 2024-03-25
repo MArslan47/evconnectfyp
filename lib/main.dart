@@ -1,7 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'Admin_Screens/newStation.dart';
+import 'Admin_Screens/stepper.dart';
 import 'Dashboard/dashboard.dart';
 import 'Dashboard/favourite.dart';
 import 'Dashboard/home.dart';
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(360, 780),
-      child: MaterialApp(
+      child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: 'splash',
         routes: {
@@ -41,7 +43,7 @@ class MyApp extends StatelessWidget {
           'update_profile': (context) => UpdateProfileScreen(),
           'home': (context) => Home(),
         },
-        home: const NewStation(),
+        home: const Splash(),
       ),
     );
   }

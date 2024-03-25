@@ -38,7 +38,6 @@ class CustomTextField extends StatelessWidget {
           border: OutlineInputBorder(
             borderSide: BorderSide.none,
 
-
           ),
 
         ),

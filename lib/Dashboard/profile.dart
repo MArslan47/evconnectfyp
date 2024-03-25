@@ -1,5 +1,8 @@
+import 'package:evconnectfyp/Admin_Screens/stepper.dart';
+import 'package:evconnectfyp/Review_Screens/reviewRate.dart';
 import 'package:evconnectfyp/Utils/appColors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../Components/profileMenuWidget.dart';
 
 
@@ -53,7 +56,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     child: const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 05),
-                      child: Icon(Icons.edit,color:Colors.black ),
+                      child: Icon(Icons.edit,color:AppColors.white ),
                     ),
                   ),
                 )
@@ -88,7 +91,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             const Divider(color: Colors.grey,),
             const SizedBox(height: 10,),
             ProfileMenuWidget(title: 'Information', icon: Icons.info, onPress: (){},),
-            ProfileMenuWidget(title: "Admin", icon: Icons.admin_panel_settings_outlined, onPress: (){}),
+            ProfileMenuWidget(title: "Admin", icon: Icons.admin_panel_settings_outlined, onPress: (){Get.to(()=>AdminStepper());}),
+            ProfileMenuWidget(title: 'Reviews & Ratting', icon: Icons.rate_review_outlined, onPress: (){Get.to(()=>ReviewRate());},),
             ProfileMenuWidget(title: 'Logout',
               icon: Icons.logout ,
               textColor: Colors.red,
